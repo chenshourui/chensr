@@ -1,30 +1,16 @@
 package com.chensr.util.designPattern.proxy.staticProxy;
 
-import java.util.Date;
-
-public class TimeProxy implements CommonObject{
-    private	CommonObject object ;
-
- 
-
-	public TimeProxy(CommonObject b) {
-		this.setObject(b);
+public class TimeProxy implements People {
+	private People people;
+	
+	public TimeProxy(People people){
+		this.people=people;
 	}
 
-    
-    @Override
-	public void doSomething() {
-		System.out.println(new Date());
-		object.doSomething();
-		System.out.println(new Date());
-		
+	@Override
+	public void code() {
+		System.out.println("time start");
+		people.code();
+		System.out.println("time end");
 	}
-    
-	public CommonObject getObject() {
-		return object;
-	}
-
-	public void setObject(CommonObject object) {
-		this.object = object;
-	}   
 }

@@ -2,11 +2,10 @@ package com.chensr.util.designPattern.proxy.staticProxy;
 
 public class Client {
 	public static void main(String[] args) {
-		CommonObject object = new People();
-		LogProxy logProxy = new LogProxy(object);
+		People p = new Programmer();
+		TimeProxy timpProxty = new TimeProxy(p);
 		
-		TimeProxy timeProxy = new TimeProxy(logProxy);
-		
-		timeProxy.doSomething();
+		LogProxy logProxty = new LogProxy(timpProxty);
+		logProxty.code();	
 	}
 }

@@ -28,13 +28,9 @@ public class CglibDynamicProxy implements MethodInterceptor{
 	@Override
 	public Object intercept(Object arg0, Method method, Object[] arg2,
 			MethodProxy arg3) throws Throwable {
-		 System.out.println("开始...");
-
+		    System.out.println("开始代理...");
 	        //执行目标对象的方法
 	        Object returnValue = method.invoke(b, arg2);
-
-	        System.out.println("提交...");
-
 	        return returnValue;
 	}
 }
